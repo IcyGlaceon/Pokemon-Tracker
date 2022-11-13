@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCalc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -43,11 +44,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCalc
+            // 
+            this.btnCalc.Location = new System.Drawing.Point(38, 30);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(112, 34);
+            this.btnCalc.TabIndex = 1;
+            this.btnCalc.Text = "Calculator";
+            this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 750);
+            this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
@@ -59,5 +71,6 @@
         #endregion
 
         private Button button1;
+        private Button btnCalc;
     }
 }

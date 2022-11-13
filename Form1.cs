@@ -13,8 +13,8 @@ namespace PokeTracker
 {
     public partial class Form1 : Form
     {
-            string connetionString;
-            SqlConnection cnn;
+        string connetionString;
+        SqlConnection cnn;
         public Form1()
         {
             InitializeComponent();
@@ -47,5 +47,13 @@ namespace PokeTracker
             rdr.Close();
             cmd.Dispose();
     }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Calculator calc = new Calculator();
+            calc.ShowDialog();
+            this.Close();
         }
+    }
 }

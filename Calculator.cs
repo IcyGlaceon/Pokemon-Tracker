@@ -16,5 +16,13 @@ namespace PokeTracker
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 pokemon= new Form1();
+            pokemon.ShowDialog();
+            this.Close();
+        }
     }
 }
