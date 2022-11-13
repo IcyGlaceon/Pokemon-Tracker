@@ -34,9 +34,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(249, 171);
+            this.button1.Location = new System.Drawing.Point(356, 285);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(153, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "View Pokemon";
             this.button1.UseVisualStyleBackColor = true;
@@ -44,12 +45,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1143, 750);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Page 1";
             this.ResumeLayout(false);
 
         }
