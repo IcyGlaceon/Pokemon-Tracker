@@ -44,7 +44,6 @@
             this.btnEqual = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn1
@@ -189,22 +188,11 @@
             this.textBox1.Size = new System.Drawing.Size(326, 31);
             this.textBox1.TabIndex = 15;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 49);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Pokemon";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 449);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnEqual);
@@ -246,6 +234,5 @@
         private Button btnEqual;
         private Button btnClear;
         private TextBox textBox1;
-        private Button button1;
     }
 }

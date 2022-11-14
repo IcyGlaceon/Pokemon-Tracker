@@ -50,10 +50,8 @@ namespace PokeTracker
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Calculator calc = new Calculator();
             calc.ShowDialog();
-            this.Close();
         }
     }
 }
