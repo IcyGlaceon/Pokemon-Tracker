@@ -13,39 +13,52 @@ namespace PokeTracker
 {
     public partial class Form1 : Form
     {
-            string connetionString;
-            SqlConnection cnn;
+
+        SqlConnection cnn = new SqlConnection();
         public Form1()
         {
             InitializeComponent();
-            connetionString = "data source=JEFFGOLDBLUM;initial catalog=Pokemon;Integrated Security=true";
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cnn = new SqlConnection(connetionString);
+            Connection connect = new Connection();
+            cnn = new SqlConnection(connect.ConnectionString);
             cnn.Open();
 
             SqlCommand cmd;
             SqlDataReader rdr;
-            String sql, Output = "";
+            String sql = "Select * from Stats";
 
-            
-            sql = "Select Name, Type, HP, ATK, DEF, SPA, SPDE, SPD, LVL, Ability from Stats";
-            cmd = new SqlCommand(sql,cnn);
+            cmd = new SqlCommand(sql, cnn);
             rdr = cmd.ExecuteReader();
 
-            while(rdr.Read())
+            
+            while (rdr.Read())
             {
-                for(int i = 0; i < 10; i++)
-                {
-                    Output = Output + rdr.GetValue(i) + ",";
-                }
+               box.Items.Add(rdr.GetValue(1).ToString());        
             }
-
-            MessageBox.Show(Output);
+            
             rdr.Close();
             cmd.Dispose();
-    }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {        
+        }
+
+        class Connection
+        { 
+            private string connetionString = "data source=JEFFGOLDBLUM;initial catalog=Pokemon;User ID = sa; Password = game";
+
+            public string ConnectionString
+            {
+                get { return connetionString; }
+                set { connetionString = value; }
+            }
+        }
+    }
+
+
 }
