@@ -256,6 +256,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Roxanne";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Roxanne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

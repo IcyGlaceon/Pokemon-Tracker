@@ -17,7 +17,7 @@ namespace PokeTracker
     {
         Routes form1 = new Routes();
         List<string> list = new List<string>();
-        List<string> pk = new List<string>();
+        public  List<string> ppk = new List<string>();
         public Roxanne()
         {
             InitializeComponent();
@@ -63,11 +63,6 @@ namespace PokeTracker
             SPA.Clear();
             SPD.Clear();
             SPE.Clear();
-        }
-
-        private void GetPK()
-        {
-            pk = form1.GetPK;
         }
 
         private void GymPK1_Click(object sender, EventArgs e)
@@ -123,7 +118,13 @@ namespace PokeTracker
 
         private void PPK1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(pk[0]);
+
+        }
+
+        private void Roxanne_Load(object sender, EventArgs e)
+        {
+            ppk.Add(form1.PK[0]);
+            MessageBox.Show(ppk.ToString());
         }
     }
 }

@@ -32,8 +32,7 @@ namespace PokeTracker
         }
 
         ComboBox[] BoxList = new ComboBox[10];
-        int run = 0;
-        List<string> PK = new List<string>();
+        public List<string> PK = new List<string>();
 
         public void ListCreate(ComboBox box, string id)
         {
@@ -145,8 +144,11 @@ namespace PokeTracker
                     {
                         if(clicked == 0)
                         {
-                        PK.Add(BoxList[i].SelectedItem.ToString());
-                        clicked++;
+                            if(BoxList[i].SelectedItem != null)
+                            {
+                                PK.Add(BoxList[i].SelectedItem.ToString());
+                                clicked++;
+                            }
                         }
                     }
                 }
@@ -218,14 +220,7 @@ namespace PokeTracker
         {
             Roxanne newForm = new Roxanne();
             newForm.Show();
-        }
-
-        public List<string> GetPK
-        {
-            get
-            {
-                return PK;
-            }
+            newForm.ppk = PK;
         }
 
     }
