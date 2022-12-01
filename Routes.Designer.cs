@@ -54,12 +54,17 @@
             this.Petalburg = new System.Windows.Forms.ComboBox();
             this.PetalburgCity = new System.Windows.Forms.Label();
             this.Gym1 = new System.Windows.Forms.Label();
+            this.FailedPKStart = new System.Windows.Forms.Button();
+            this.KilledPKStart = new System.Windows.Forms.Button();
+            this.ActivePKStart = new System.Windows.Forms.Button();
+            this.Starter = new System.Windows.Forms.ComboBox();
+            this.RStarter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // R101
             // 
             this.R101.AutoSize = true;
-            this.R101.Location = new System.Drawing.Point(12, 9);
+            this.R101.Location = new System.Drawing.Point(12, 53);
             this.R101.Name = "R101";
             this.R101.Size = new System.Drawing.Size(59, 15);
             this.R101.TabIndex = 2;
@@ -69,7 +74,7 @@
             // R102
             // 
             this.R102.AutoSize = true;
-            this.R102.Location = new System.Drawing.Point(12, 97);
+            this.R102.Location = new System.Drawing.Point(12, 141);
             this.R102.Name = "R102";
             this.R102.Size = new System.Drawing.Size(59, 15);
             this.R102.TabIndex = 6;
@@ -80,7 +85,7 @@
             // 
             this.Route101.Enabled = false;
             this.Route101.FormattingEnabled = true;
-            this.Route101.Location = new System.Drawing.Point(12, 27);
+            this.Route101.Location = new System.Drawing.Point(12, 71);
             this.Route101.Name = "Route101";
             this.Route101.Size = new System.Drawing.Size(121, 23);
             this.Route101.TabIndex = 7;
@@ -91,7 +96,7 @@
             // 
             this.ActivePK101.BackColor = System.Drawing.Color.Green;
             this.ActivePK101.Enabled = false;
-            this.ActivePK101.Location = new System.Drawing.Point(139, 27);
+            this.ActivePK101.Location = new System.Drawing.Point(139, 71);
             this.ActivePK101.Name = "ActivePK101";
             this.ActivePK101.Size = new System.Drawing.Size(75, 23);
             this.ActivePK101.TabIndex = 8;
@@ -105,7 +110,7 @@
             // 
             this.KilledPK101.BackColor = System.Drawing.Color.Red;
             this.KilledPK101.Enabled = false;
-            this.KilledPK101.Location = new System.Drawing.Point(220, 27);
+            this.KilledPK101.Location = new System.Drawing.Point(220, 71);
             this.KilledPK101.Name = "KilledPK101";
             this.KilledPK101.Size = new System.Drawing.Size(75, 23);
             this.KilledPK101.TabIndex = 9;
@@ -119,7 +124,7 @@
             // 
             this.FailedPK101.BackColor = System.Drawing.Color.White;
             this.FailedPK101.Enabled = false;
-            this.FailedPK101.Location = new System.Drawing.Point(301, 27);
+            this.FailedPK101.Location = new System.Drawing.Point(301, 71);
             this.FailedPK101.Name = "FailedPK101";
             this.FailedPK101.Size = new System.Drawing.Size(75, 23);
             this.FailedPK101.TabIndex = 10;
@@ -133,7 +138,7 @@
             // 
             this.FailedPK102.BackColor = System.Drawing.Color.White;
             this.FailedPK102.Enabled = false;
-            this.FailedPK102.Location = new System.Drawing.Point(301, 115);
+            this.FailedPK102.Location = new System.Drawing.Point(301, 159);
             this.FailedPK102.Name = "FailedPK102";
             this.FailedPK102.Size = new System.Drawing.Size(75, 23);
             this.FailedPK102.TabIndex = 14;
@@ -147,7 +152,7 @@
             // 
             this.KilledPK102.BackColor = System.Drawing.Color.Red;
             this.KilledPK102.Enabled = false;
-            this.KilledPK102.Location = new System.Drawing.Point(220, 115);
+            this.KilledPK102.Location = new System.Drawing.Point(220, 159);
             this.KilledPK102.Name = "KilledPK102";
             this.KilledPK102.Size = new System.Drawing.Size(75, 23);
             this.KilledPK102.TabIndex = 13;
@@ -161,7 +166,7 @@
             // 
             this.ActivePK102.BackColor = System.Drawing.Color.Green;
             this.ActivePK102.Enabled = false;
-            this.ActivePK102.Location = new System.Drawing.Point(139, 115);
+            this.ActivePK102.Location = new System.Drawing.Point(139, 159);
             this.ActivePK102.Name = "ActivePK102";
             this.ActivePK102.Size = new System.Drawing.Size(75, 23);
             this.ActivePK102.TabIndex = 12;
@@ -175,7 +180,7 @@
             // 
             this.Route102.Enabled = false;
             this.Route102.FormattingEnabled = true;
-            this.Route102.Location = new System.Drawing.Point(12, 115);
+            this.Route102.Location = new System.Drawing.Point(12, 159);
             this.Route102.Name = "Route102";
             this.Route102.Size = new System.Drawing.Size(121, 23);
             this.Route102.TabIndex = 11;
@@ -186,7 +191,7 @@
             // 
             this.FailedPK104.BackColor = System.Drawing.Color.White;
             this.FailedPK104.Enabled = false;
-            this.FailedPK104.Location = new System.Drawing.Point(301, 203);
+            this.FailedPK104.Location = new System.Drawing.Point(301, 247);
             this.FailedPK104.Name = "FailedPK104";
             this.FailedPK104.Size = new System.Drawing.Size(75, 23);
             this.FailedPK104.TabIndex = 24;
@@ -199,7 +204,7 @@
             // 
             this.KilledPK104.BackColor = System.Drawing.Color.Red;
             this.KilledPK104.Enabled = false;
-            this.KilledPK104.Location = new System.Drawing.Point(220, 203);
+            this.KilledPK104.Location = new System.Drawing.Point(220, 247);
             this.KilledPK104.Name = "KilledPK104";
             this.KilledPK104.Size = new System.Drawing.Size(75, 23);
             this.KilledPK104.TabIndex = 23;
@@ -212,7 +217,7 @@
             // 
             this.ActivePK104.BackColor = System.Drawing.Color.Green;
             this.ActivePK104.Enabled = false;
-            this.ActivePK104.Location = new System.Drawing.Point(139, 203);
+            this.ActivePK104.Location = new System.Drawing.Point(139, 247);
             this.ActivePK104.Name = "ActivePK104";
             this.ActivePK104.Size = new System.Drawing.Size(75, 23);
             this.ActivePK104.TabIndex = 22;
@@ -226,7 +231,7 @@
             // 
             this.Route104.Enabled = false;
             this.Route104.FormattingEnabled = true;
-            this.Route104.Location = new System.Drawing.Point(12, 203);
+            this.Route104.Location = new System.Drawing.Point(12, 247);
             this.Route104.Name = "Route104";
             this.Route104.Size = new System.Drawing.Size(121, 23);
             this.Route104.TabIndex = 21;
@@ -237,7 +242,7 @@
             // 
             this.FailedPK103.BackColor = System.Drawing.Color.White;
             this.FailedPK103.Enabled = false;
-            this.FailedPK103.Location = new System.Drawing.Point(301, 71);
+            this.FailedPK103.Location = new System.Drawing.Point(301, 115);
             this.FailedPK103.Name = "FailedPK103";
             this.FailedPK103.Size = new System.Drawing.Size(75, 23);
             this.FailedPK103.TabIndex = 20;
@@ -250,7 +255,7 @@
             // 
             this.KilledPK103.BackColor = System.Drawing.Color.Red;
             this.KilledPK103.Enabled = false;
-            this.KilledPK103.Location = new System.Drawing.Point(220, 71);
+            this.KilledPK103.Location = new System.Drawing.Point(220, 115);
             this.KilledPK103.Name = "KilledPK103";
             this.KilledPK103.Size = new System.Drawing.Size(75, 23);
             this.KilledPK103.TabIndex = 19;
@@ -263,10 +268,11 @@
             // 
             this.ActivePK103.BackColor = System.Drawing.Color.Green;
             this.ActivePK103.Enabled = false;
-            this.ActivePK103.Location = new System.Drawing.Point(139, 71);
+            this.ActivePK103.Location = new System.Drawing.Point(139, 115);
             this.ActivePK103.Name = "ActivePK103";
             this.ActivePK103.Size = new System.Drawing.Size(75, 23);
             this.ActivePK103.TabIndex = 18;
+            this.ActivePK103.Tag = "Route103";
             this.ActivePK103.Text = "Active";
             this.ActivePK103.UseVisualStyleBackColor = false;
             this.ActivePK103.Visible = false;
@@ -276,7 +282,7 @@
             // 
             this.Route103.Enabled = false;
             this.Route103.FormattingEnabled = true;
-            this.Route103.Location = new System.Drawing.Point(12, 71);
+            this.Route103.Location = new System.Drawing.Point(12, 115);
             this.Route103.Name = "Route103";
             this.Route103.Size = new System.Drawing.Size(121, 23);
             this.Route103.TabIndex = 17;
@@ -286,7 +292,7 @@
             // R104
             // 
             this.R104.AutoSize = true;
-            this.R104.Location = new System.Drawing.Point(12, 185);
+            this.R104.Location = new System.Drawing.Point(12, 229);
             this.R104.Name = "R104";
             this.R104.Size = new System.Drawing.Size(59, 15);
             this.R104.TabIndex = 16;
@@ -296,7 +302,7 @@
             // R103
             // 
             this.R103.AutoSize = true;
-            this.R103.Location = new System.Drawing.Point(12, 53);
+            this.R103.Location = new System.Drawing.Point(12, 97);
             this.R103.Name = "R103";
             this.R103.Size = new System.Drawing.Size(59, 15);
             this.R103.TabIndex = 15;
@@ -307,7 +313,7 @@
             // 
             this.FailedPKPetal.BackColor = System.Drawing.Color.White;
             this.FailedPKPetal.Enabled = false;
-            this.FailedPKPetal.Location = new System.Drawing.Point(301, 159);
+            this.FailedPKPetal.Location = new System.Drawing.Point(301, 203);
             this.FailedPKPetal.Name = "FailedPKPetal";
             this.FailedPKPetal.Size = new System.Drawing.Size(75, 23);
             this.FailedPKPetal.TabIndex = 29;
@@ -321,7 +327,7 @@
             // 
             this.KilledPKPetal.BackColor = System.Drawing.Color.Red;
             this.KilledPKPetal.Enabled = false;
-            this.KilledPKPetal.Location = new System.Drawing.Point(220, 159);
+            this.KilledPKPetal.Location = new System.Drawing.Point(220, 203);
             this.KilledPKPetal.Name = "KilledPKPetal";
             this.KilledPKPetal.Size = new System.Drawing.Size(75, 23);
             this.KilledPKPetal.TabIndex = 28;
@@ -335,7 +341,7 @@
             // 
             this.ActivePKPetal.BackColor = System.Drawing.Color.Green;
             this.ActivePKPetal.Enabled = false;
-            this.ActivePKPetal.Location = new System.Drawing.Point(139, 159);
+            this.ActivePKPetal.Location = new System.Drawing.Point(139, 203);
             this.ActivePKPetal.Name = "ActivePKPetal";
             this.ActivePKPetal.Size = new System.Drawing.Size(75, 23);
             this.ActivePKPetal.TabIndex = 27;
@@ -349,7 +355,7 @@
             // 
             this.Petalburg.Enabled = false;
             this.Petalburg.FormattingEnabled = true;
-            this.Petalburg.Location = new System.Drawing.Point(12, 159);
+            this.Petalburg.Location = new System.Drawing.Point(12, 203);
             this.Petalburg.Name = "Petalburg";
             this.Petalburg.Size = new System.Drawing.Size(121, 23);
             this.Petalburg.TabIndex = 26;
@@ -359,7 +365,7 @@
             // PetalburgCity
             // 
             this.PetalburgCity.AutoSize = true;
-            this.PetalburgCity.Location = new System.Drawing.Point(12, 141);
+            this.PetalburgCity.Location = new System.Drawing.Point(12, 185);
             this.PetalburgCity.Name = "PetalburgCity";
             this.PetalburgCity.Size = new System.Drawing.Size(82, 15);
             this.PetalburgCity.TabIndex = 25;
@@ -369,18 +375,86 @@
             // Gym1
             // 
             this.Gym1.AutoSize = true;
-            this.Gym1.Location = new System.Drawing.Point(12, 229);
+            this.Gym1.Location = new System.Drawing.Point(12, 273);
             this.Gym1.Name = "Gym1";
             this.Gym1.Size = new System.Drawing.Size(53, 15);
             this.Gym1.TabIndex = 30;
             this.Gym1.Text = "Roxanne";
             this.Gym1.Click += new System.EventHandler(this.Gym1_Click);
             // 
+            // FailedPKStart
+            // 
+            this.FailedPKStart.BackColor = System.Drawing.Color.White;
+            this.FailedPKStart.Enabled = false;
+            this.FailedPKStart.Location = new System.Drawing.Point(301, 27);
+            this.FailedPKStart.Name = "FailedPKStart";
+            this.FailedPKStart.Size = new System.Drawing.Size(75, 23);
+            this.FailedPKStart.TabIndex = 35;
+            this.FailedPKStart.Tag = "Starter";
+            this.FailedPKStart.Text = "Failed";
+            this.FailedPKStart.UseVisualStyleBackColor = false;
+            this.FailedPKStart.Visible = false;
+            this.FailedPKStart.Click += new System.EventHandler(this.KilledPK_Click);
+            // 
+            // KilledPKStart
+            // 
+            this.KilledPKStart.BackColor = System.Drawing.Color.Red;
+            this.KilledPKStart.Enabled = false;
+            this.KilledPKStart.Location = new System.Drawing.Point(220, 27);
+            this.KilledPKStart.Name = "KilledPKStart";
+            this.KilledPKStart.Size = new System.Drawing.Size(75, 23);
+            this.KilledPKStart.TabIndex = 34;
+            this.KilledPKStart.Tag = "Starter";
+            this.KilledPKStart.Text = "Killed";
+            this.KilledPKStart.UseVisualStyleBackColor = false;
+            this.KilledPKStart.Visible = false;
+            this.KilledPKStart.Click += new System.EventHandler(this.KilledPK_Click);
+            // 
+            // ActivePKStart
+            // 
+            this.ActivePKStart.BackColor = System.Drawing.Color.Green;
+            this.ActivePKStart.Enabled = false;
+            this.ActivePKStart.Location = new System.Drawing.Point(139, 27);
+            this.ActivePKStart.Name = "ActivePKStart";
+            this.ActivePKStart.Size = new System.Drawing.Size(75, 23);
+            this.ActivePKStart.TabIndex = 33;
+            this.ActivePKStart.Tag = "Starter";
+            this.ActivePKStart.Text = "Active";
+            this.ActivePKStart.UseVisualStyleBackColor = false;
+            this.ActivePKStart.Visible = false;
+            this.ActivePKStart.Click += new System.EventHandler(this.ActivePK_Click);
+            // 
+            // Starter
+            // 
+            this.Starter.Enabled = false;
+            this.Starter.FormattingEnabled = true;
+            this.Starter.Location = new System.Drawing.Point(12, 27);
+            this.Starter.Name = "Starter";
+            this.Starter.Size = new System.Drawing.Size(121, 23);
+            this.Starter.TabIndex = 32;
+            this.Starter.Tag = "";
+            this.Starter.Visible = false;
+            // 
+            // RStarter
+            // 
+            this.RStarter.AutoSize = true;
+            this.RStarter.Location = new System.Drawing.Point(12, 9);
+            this.RStarter.Name = "RStarter";
+            this.RStarter.Size = new System.Drawing.Size(41, 15);
+            this.RStarter.TabIndex = 31;
+            this.RStarter.Text = "Starter";
+            this.RStarter.Click += new System.EventHandler(this.Starter_Click);
+            // 
             // Routes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.FailedPKStart);
+            this.Controls.Add(this.KilledPKStart);
+            this.Controls.Add(this.ActivePKStart);
+            this.Controls.Add(this.Starter);
+            this.Controls.Add(this.RStarter);
             this.Controls.Add(this.Gym1);
             this.Controls.Add(this.FailedPKPetal);
             this.Controls.Add(this.KilledPKPetal);
@@ -441,5 +515,10 @@
         private ComboBox Petalburg;
         private Label PetalburgCity;
         private Label Gym1;
+        private Button FailedPKStart;
+        private Button KilledPKStart;
+        private Button ActivePKStart;
+        private ComboBox Starter;
+        private Label RStarter;
     }
 }

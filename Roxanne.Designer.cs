@@ -34,7 +34,7 @@
             this.GymPK1 = new System.Windows.Forms.Button();
             this.GymPK2 = new System.Windows.Forms.Button();
             this.GymPK3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PKInfo = new System.Windows.Forms.TextBox();
             this.HP = new System.Windows.Forms.TextBox();
             this.SPE = new System.Windows.Forms.TextBox();
             this.SPD = new System.Windows.Forms.TextBox();
@@ -49,6 +49,12 @@
             this.PPK4 = new System.Windows.Forms.Button();
             this.PPK5 = new System.Windows.Forms.Button();
             this.PPK6 = new System.Windows.Forms.Button();
+            this.PATK = new System.Windows.Forms.TextBox();
+            this.PDEF = new System.Windows.Forms.TextBox();
+            this.PSPA = new System.Windows.Forms.TextBox();
+            this.PSPD = new System.Windows.Forms.TextBox();
+            this.PSPE = new System.Windows.Forms.TextBox();
+            this.PHP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -93,12 +99,12 @@
             this.GymPK3.UseVisualStyleBackColor = true;
             this.GymPK3.Click += new System.EventHandler(this.GymPK3_Click);
             // 
-            // textBox1
+            // PKInfo
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 143);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(776, 23);
-            this.textBox1.TabIndex = 42;
+            this.PKInfo.Location = new System.Drawing.Point(15, 143);
+            this.PKInfo.Name = "PKInfo";
+            this.PKInfo.Size = new System.Drawing.Size(776, 23);
+            this.PKInfo.TabIndex = 42;
             // 
             // HP
             // 
@@ -189,7 +195,7 @@
             this.PPK1.Size = new System.Drawing.Size(95, 30);
             this.PPK1.TabIndex = 57;
             this.PPK1.UseVisualStyleBackColor = true;
-            this.PPK1.Click += new System.EventHandler(this.PPK1_Click);
+            this.PPK1.Click += new System.EventHandler(this.Display_PlayerPK);
             // 
             // PPK2
             // 
@@ -198,6 +204,7 @@
             this.PPK2.Size = new System.Drawing.Size(95, 30);
             this.PPK2.TabIndex = 58;
             this.PPK2.UseVisualStyleBackColor = true;
+            this.PPK2.Click += new System.EventHandler(this.Display_PlayerPK);
             // 
             // PPK3
             // 
@@ -206,6 +213,7 @@
             this.PPK3.Size = new System.Drawing.Size(95, 30);
             this.PPK3.TabIndex = 59;
             this.PPK3.UseVisualStyleBackColor = true;
+            this.PPK3.Click += new System.EventHandler(this.Display_PlayerPK);
             // 
             // PPK4
             // 
@@ -214,6 +222,7 @@
             this.PPK4.Size = new System.Drawing.Size(95, 30);
             this.PPK4.TabIndex = 60;
             this.PPK4.UseVisualStyleBackColor = true;
+            this.PPK4.Click += new System.EventHandler(this.Display_PlayerPK);
             // 
             // PPK5
             // 
@@ -222,6 +231,7 @@
             this.PPK5.Size = new System.Drawing.Size(95, 30);
             this.PPK5.TabIndex = 61;
             this.PPK5.UseVisualStyleBackColor = true;
+            this.PPK5.Click += new System.EventHandler(this.Display_PlayerPK);
             // 
             // PPK6
             // 
@@ -230,12 +240,67 @@
             this.PPK6.Size = new System.Drawing.Size(95, 30);
             this.PPK6.TabIndex = 62;
             this.PPK6.UseVisualStyleBackColor = true;
+            this.PPK6.Click += new System.EventHandler(this.Display_PlayerPK);
+            // 
+            // PATK
+            // 
+            this.PATK.Location = new System.Drawing.Point(688, 201);
+            this.PATK.Name = "PATK";
+            this.PATK.ReadOnly = true;
+            this.PATK.Size = new System.Drawing.Size(100, 23);
+            this.PATK.TabIndex = 68;
+            // 
+            // PDEF
+            // 
+            this.PDEF.Location = new System.Drawing.Point(688, 230);
+            this.PDEF.Name = "PDEF";
+            this.PDEF.ReadOnly = true;
+            this.PDEF.Size = new System.Drawing.Size(100, 23);
+            this.PDEF.TabIndex = 67;
+            // 
+            // PSPA
+            // 
+            this.PSPA.Location = new System.Drawing.Point(688, 259);
+            this.PSPA.Name = "PSPA";
+            this.PSPA.ReadOnly = true;
+            this.PSPA.Size = new System.Drawing.Size(100, 23);
+            this.PSPA.TabIndex = 66;
+            // 
+            // PSPD
+            // 
+            this.PSPD.Location = new System.Drawing.Point(688, 288);
+            this.PSPD.Name = "PSPD";
+            this.PSPD.ReadOnly = true;
+            this.PSPD.Size = new System.Drawing.Size(100, 23);
+            this.PSPD.TabIndex = 65;
+            // 
+            // PSPE
+            // 
+            this.PSPE.Location = new System.Drawing.Point(688, 317);
+            this.PSPE.Name = "PSPE";
+            this.PSPE.ReadOnly = true;
+            this.PSPE.Size = new System.Drawing.Size(100, 23);
+            this.PSPE.TabIndex = 64;
+            // 
+            // PHP
+            // 
+            this.PHP.Location = new System.Drawing.Point(688, 172);
+            this.PHP.Name = "PHP";
+            this.PHP.ReadOnly = true;
+            this.PHP.Size = new System.Drawing.Size(100, 23);
+            this.PHP.TabIndex = 63;
             // 
             // Roxanne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PATK);
+            this.Controls.Add(this.PDEF);
+            this.Controls.Add(this.PSPA);
+            this.Controls.Add(this.PSPD);
+            this.Controls.Add(this.PSPE);
+            this.Controls.Add(this.PHP);
             this.Controls.Add(this.PPK6);
             this.Controls.Add(this.PPK5);
             this.Controls.Add(this.PPK4);
@@ -249,14 +314,13 @@
             this.Controls.Add(this.SPD);
             this.Controls.Add(this.SPE);
             this.Controls.Add(this.HP);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PKInfo);
             this.Controls.Add(this.GymPK3);
             this.Controls.Add(this.GymPK2);
             this.Controls.Add(this.GymPK1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Roxanne";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Roxanne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -269,7 +333,7 @@
         private Button GymPK1;
         private Button GymPK2;
         private Button GymPK3;
-        private TextBox textBox1;
+        private TextBox PKInfo;
         private TextBox HP;
         private TextBox SPE;
         private TextBox SPD;
@@ -284,5 +348,11 @@
         private Button PPK4;
         private Button PPK5;
         private Button PPK6;
+        private TextBox PATK;
+        private TextBox PDEF;
+        private TextBox PSPA;
+        private TextBox PSPD;
+        private TextBox PSPE;
+        private TextBox PHP;
     }
 }

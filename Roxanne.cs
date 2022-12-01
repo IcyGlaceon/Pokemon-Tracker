@@ -17,22 +17,35 @@ namespace PokeTracker
     {
         Routes form1 = new Routes();
         List<string> list = new List<string>();
-        public  List<string> ppk = new List<string>();
-        public Roxanne()
+        public List<string> ppk;
+        Button[] ListPPK;
+       
+
+        public Roxanne(List<string> K)
         {
             InitializeComponent();
 
+            ListPPK = new[] { PPK1, PPK2, PPK3, PPK4, PPK5, PPK6 };
+
+            ppk = K;
+            if(ppk is not null )
+            {
+                for(int i = 0; i < form1.PK.Count; i++)
+                {
+                    ppk[i] = K[i]!;
+                }
+            }
 
             SqlConnection cnn = new SqlConnection();
 
-            string connetionString = "data source=JEFFGOLDBLUM;initial catalog=Pokemon;User ID = sa; Password = game";
+            string connetionString = "data source=(local);initial catalog=Pokemon; Trusted_Connection=True";
 
             cnn = new SqlConnection(connetionString);
             cnn.Open();
 
             SqlCommand cmd;
             SqlDataReader rdr;
-            String sql = "Select * from Stats where ID in (074,074,299)";
+            String sql = "Select * from Stats";
 
             cmd = new SqlCommand(sql, cnn);
             rdr = cmd.ExecuteReader();
@@ -43,20 +56,28 @@ namespace PokeTracker
             {
                 for(int i = 0; i < 12; i++)
                 {
-                    PKdata = rdr.GetValue(i).ToString();
+                    PKdata = rdr.GetValue(i).ToString()!;
                     list.Add(PKdata);
                 }
             }
-        
+
+            if (ppk is not null)
+            {
+                for (int i = 0; i < ppk.Count; i++)
+                {
+                    ListPPK[i].Text = ppk[i].ToString();
+                }
+            }
+
 
             rdr.Close();
             cmd.Dispose();
 
         }
 
-        public void Clear()
+        public void GClear()
         {
-            textBox1.Clear();
+            PKInfo.Clear();
             HP.Clear();
             ATK.Clear();
             DEF.Clear();
@@ -67,64 +88,104 @@ namespace PokeTracker
 
         private void GymPK1_Click(object sender, EventArgs e)
         {
-            Clear();
-            textBox1.Text = "Selected Pokemon - ";
-            for(int i = 1; i < 4; i++)
-            {
-                textBox1.Text = textBox1.Text + list[i] + " | ";
-            }
-            HP.Text = "HP - " + list[4];
-            ATK.Text = "ATK - " + list[5];
-            DEF.Text = "DEF - " + list[6];
-            SPA.Text = "SPA - " + list[7];
-            SPD.Text = "SPD - " + list[8];
-            SPE.Text = "SPE - " + list[9];
+            GClear();
+            PKInfo.TextAlign = HorizontalAlignment.Left;
+            PKInfo.Text = "Selected Pokemon - ";
 
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == "Geodude")
+                {
+                    for(int p = 0; p < 3; p++)
+                    {
+                        PKInfo.Text = PKInfo.Text + list[i + p] + " | ";
+                    }
+
+                    HP.Text = "HP - " + list[i + 3];
+                    ATK.Text = "ATK - " + list[i + 4];
+                    DEF.Text = "DEF - " + list[i + 5];
+                    SPA.Text = "SPA - " + list[i + 6];
+                    SPD.Text = "SPD - " + list[i + 7];
+                    SPE.Text = "SPE - " + list[i + 8];
+                }
+            }
         }
 
         private void GymPK2_Click(object sender, EventArgs e)
         {
-            Clear();
-            textBox1.Text = "Selected Pokemon - ";
-            for (int i = 1; i < 4; i++)
-            {
-                textBox1.Text = textBox1.Text + list[i] + " | ";
-            }
+            GClear();
+            PKInfo.TextAlign = HorizontalAlignment.Left;
+            PKInfo.Text = "Selected Pokemon - ";
 
-            HP.Text = "HP - " + list[4];
-            ATK.Text = "ATK - " + list[5];
-            DEF.Text = "DEF - " + list[6];
-            SPA.Text = "SPA - " + list[7];
-            SPD.Text = "SPD - " + list[8];
-            SPE.Text = "SPE - " + list[9];
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == "Geodude")
+                {
+                    for (int p = 0; p < 3; p++)
+                    {
+                        PKInfo.Text = PKInfo.Text + list[i + p] + " | ";
+                    }
+
+                    HP.Text = "HP - " + list[i + 3];
+                    ATK.Text = "ATK - " + list[i + 4];
+                    DEF.Text = "DEF - " + list[i + 5];
+                    SPA.Text = "SPA - " + list[i + 6];
+                    SPD.Text = "SPD - " + list[i + 7];
+                    SPE.Text = "SPE - " + list[i + 8];
+                }
+            }
         }
 
         private void GymPK3_Click(object sender, EventArgs e)
         {
-            Clear();
-            textBox1.Text = "Selected Pokemon - ";
-            for (int i = 13; i < 15; i++)
+            GClear();
+            PKInfo.TextAlign = HorizontalAlignment.Left;
+            PKInfo.Text = "Selected Pokemon - ";
+
+            for (int i = 0; i < list.Count; i++)
             {
-                textBox1.Text = textBox1.Text + list[i] + " | ";
+                if (list[i] == "Nosepass")
+                {
+                    for (int p = 0; p < 3; p++)
+                    {
+                        PKInfo.Text = PKInfo.Text + list[i + p] + " | ";
+                    }
+
+                    HP.Text = "HP - " + list[i + 3];
+                    ATK.Text = "ATK - " + list[i + 4];
+                    DEF.Text = "DEF - " + list[i + 5];
+                    SPA.Text = "SPA - " + list[i + 6];
+                    SPD.Text = "SPD - " + list[i + 7];
+                    SPE.Text = "SPE - " + list[i + 8];
+                }
+            }
+        }
+
+        private void Display_PlayerPK(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            PKInfo.TextAlign = HorizontalAlignment.Right;
+            PKInfo.Text = "Selected Pokemon - ";
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] == btn.Text)
+                {
+                    for (int p = 0; p < 3; p++)
+                    {
+                        PKInfo.Text = PKInfo.Text + list[i + p] + " | ";
+                    }
+
+                    PHP.Text = "HP - " + list[i + 3];
+                    PATK.Text = "ATK - " + list[i + 4];
+                    PDEF.Text = "DEF - " + list[i + 5];
+                    PSPA.Text = "SPA - " + list[i + 6];
+                    PSPD.Text = "SPD - " + list[i + 7];
+                    PSPE.Text = "SPE - " + list[i + 8];
+                }
             }
 
-            HP.Text = "HP - " + list[16];
-            ATK.Text = "ATK - " + list[17];
-            DEF.Text = "DEF - " + list[18];
-            SPA.Text = "SPA - " + list[19];
-            SPD.Text = "SPD - " + list[20];
-            SPE.Text = "SPE - " + list[21];
-        }
 
-        private void PPK1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Roxanne_Load(object sender, EventArgs e)
-        {
-            ppk.Add(form1.PK[0]);
-            MessageBox.Show(ppk.ToString());
         }
     }
 }

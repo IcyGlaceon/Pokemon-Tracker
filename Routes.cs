@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,9 @@ namespace PokeTracker
     public partial class Routes : Form
     {
 
+        ComboBox[] BoxList = new ComboBox[10];
+        public List<string> PK = new List<string>();
+        
         public Routes()
         {
             InitializeComponent();
@@ -31,8 +35,6 @@ namespace PokeTracker
             }
         }
 
-        ComboBox[] BoxList = new ComboBox[10];
-        public List<string> PK = new List<string>();
 
         public void ListCreate(ComboBox box, string id)
         {
@@ -60,7 +62,7 @@ namespace PokeTracker
             cmd.Dispose();
         }
 
-        public void MakeVisible(ComboBox box, Button btn1, Button btn2, Button btn3)
+        public static void MakeVisible(ComboBox box, Button btn1, Button btn2, Button btn3)
         {
             if (box.Visible == false)
             {
@@ -107,6 +109,17 @@ namespace PokeTracker
             }
         }
 
+        private void Starter_Click(object sender, EventArgs e)
+        {
+            ListCreate(Starter, "252,255,258");
+            for (int i = 0; i < BoxList.Length; i++)
+            {
+                BoxList[i] = Starter;
+            }
+
+            MakeVisible(Starter, ActivePKStart, KilledPKStart, FailedPKStart);
+        }
+
         private void R101_Click(object sender, EventArgs e)
         {
 
@@ -146,9 +159,10 @@ namespace PokeTracker
                         {
                             if(BoxList[i].SelectedItem != null)
                             {
-                                PK.Add(BoxList[i].SelectedItem.ToString());
+                            PK.Add(BoxList[i].SelectedItem.ToString()!);
                                 clicked++;
                             }
+
                         }
                     }
                 }
@@ -162,8 +176,11 @@ namespace PokeTracker
                     {
                         if (clicked == 0)
                         {
-                            PK.Remove(BoxList[i].SelectedItem.ToString());
-                            clicked++;
+                            if (BoxList[i].SelectedItem != null)
+                            {
+                                PK.Remove(BoxList[i].SelectedItem.ToString()!);
+                                clicked++;
+                            }
                         }
                     }
                 }
@@ -218,10 +235,10 @@ namespace PokeTracker
 
         private void Gym1_Click(object sender, EventArgs e)
         {
-            Roxanne newForm = new Roxanne();
+            Roxanne newForm = new Roxanne(PK);
             newForm.Show();
-            newForm.ppk = PK;
         }
+
 
     }
 
