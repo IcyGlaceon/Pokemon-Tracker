@@ -4,30 +4,30 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Resources;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace PokeTracker
 {
-    public partial class Roxanne : Form
+    public partial class Brawly : Form
     {
         Routes form1 = new Routes();
         List<string> list = new List<string>();
         public List<string> ppk = new List<string>();
         Button[] ListPPK;
-       
 
-        public Roxanne(List<string> K)
+
+        public Brawly(List<string> K)
         {
             InitializeComponent();
 
             ListPPK = new[] { PPK1, PPK2, PPK3, PPK4, PPK5, PPK6 };
 
-            
+
             SqlConnection cnn = new SqlConnection();
 
             string connetionString = "data source=(local);initial catalog=Pokemon; Trusted_Connection=True";
@@ -46,7 +46,7 @@ namespace PokeTracker
 
             while (rdr.Read())
             {
-                for(int i = 0; i < 12; i++)
+                for (int i = 0; i < 12; i++)
                 {
                     PKdata = rdr.GetValue(i).ToString()!;
                     list.Add(PKdata);
@@ -60,7 +60,6 @@ namespace PokeTracker
                 for (int i = 0; i < ppk.Count; i++)
                 {
                     ListPPK[i].Text = ppk[i].ToString();
-                   // MessageBox.Show(ppk[i].ToString());
                 }
             }
 
@@ -84,14 +83,15 @@ namespace PokeTracker
         private void GymPK1_Click(object sender, EventArgs e)
         {
             GClear();
+            Button btn = (Button)sender;
             PKInfo.TextAlign = HorizontalAlignment.Left;
             PKInfo.Text = "Selected Pokemon - ";
 
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] == "Geodude")
+                if (list[i] == btn.Text)
                 {
-                    for(int p = 0; p < 3; p++)
+                    for (int p = 0; p < 3; p++)
                     {
                         PKInfo.Text = PKInfo.Text + list[i + p] + " | ";
                     }
@@ -109,12 +109,13 @@ namespace PokeTracker
         private void GymPK2_Click(object sender, EventArgs e)
         {
             GClear();
+            Button btn = (Button)sender;
             PKInfo.TextAlign = HorizontalAlignment.Left;
             PKInfo.Text = "Selected Pokemon - ";
 
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] == "Geodude")
+                if (list[i] == btn.Text)
                 {
                     for (int p = 0; p < 3; p++)
                     {
@@ -134,12 +135,13 @@ namespace PokeTracker
         private void GymPK3_Click(object sender, EventArgs e)
         {
             GClear();
+            Button btn = (Button)sender;
             PKInfo.TextAlign = HorizontalAlignment.Left;
             PKInfo.Text = "Selected Pokemon - ";
 
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] == "Nosepass")
+                if (list[i] == btn.Text)
                 {
                     for (int p = 0; p < 3; p++)
                     {

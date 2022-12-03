@@ -16,7 +16,7 @@ namespace PokeTracker
     public partial class Routes : Form
     {
 
-        ComboBox[] BoxList = new ComboBox[10];
+        List<ComboBox> RouteList = new List<ComboBox>();
         public List<string> PK = new List<string>();
         
         public Routes()
@@ -109,14 +109,102 @@ namespace PokeTracker
             }
         }
 
+        private void KilledPK_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int clicked = 0;
+            for(int i = 0; i < RouteList.Count; i++)
+            {
+                if (RouteList[i].Name == (string)btn.Tag)
+                {
+                    if (RouteList[i].Name == (string)btn.Tag)
+                    {
+                        if (clicked == 0)
+                        {
+                            for (int p = 0; p < PK.Count; p++)
+                            {
+                                if (PK[p] == (string)RouteList[i].SelectedItem)
+                                {
+                                    PK.Remove(RouteList[i].SelectedItem.ToString()!);
+                                }
+                            }
+
+                        }
+                        clicked++;
+                    }
+
+                    RouteList[i].Enabled = false;
+                }
+            }
+        }
+
+        private void FailedPK_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            for(int i = 0; i < RouteList.Count; i++)
+            {
+                if (RouteList[i].Name == (string)btn.Tag)
+                {
+                    RouteList[i].Enabled = false;
+                }
+            }
+        }
+
+        private void ActivePK_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int clicked = 0;
+
+            if(btn.BackColor == Color.Green)
+            {
+                for(int i = 0; i < RouteList.Count; i++)
+                {
+                    if (RouteList[i].Name == (string)btn.Tag)
+                    {
+                        if(clicked == 0)
+                        {
+                            if(RouteList[i].SelectedItem != null)
+                            {
+                                MessageBox.Show(RouteList[i].SelectedItem.ToString() + " has been activated");
+                                PK.Add(RouteList[i].SelectedItem.ToString()!);
+                            }
+                        }
+                        clicked++;
+                    }
+                }
+
+                btn.BackColor = Color.Red;
+            }else if(btn.BackColor == Color.Red)
+            {
+                for (int i = 0; i < RouteList.Count; i++)
+                {
+                    if (RouteList[i].Name == (string)btn.Tag)
+                    {
+                        if (clicked == 0)
+                        {
+                            for(int p = 0; p < PK.Count;p++)
+                            {
+                                if (PK[p] == (string)RouteList[i].SelectedItem)
+                                {
+                                    MessageBox.Show(RouteList[i].SelectedItem.ToString() + " has been deactivated");
+                                    PK.Remove(RouteList[i].SelectedItem.ToString()!);
+                                }
+                            }
+
+                        }
+                        clicked++;
+                    }
+                }
+                btn.BackColor = Color.Green;
+            }
+        }
         private void Starter_Click(object sender, EventArgs e)
         {
             ListCreate(Starter, "252,255,258");
-            for (int i = 0; i < BoxList.Length; i++)
+            if (!RouteList.Contains(Starter))
             {
-                BoxList[i] = Starter;
+                RouteList.Add(Starter);
             }
-
             MakeVisible(Starter, ActivePKStart, KilledPKStart, FailedPKStart);
         }
 
@@ -124,77 +212,22 @@ namespace PokeTracker
         {
 
             ListCreate(Route101, "261,263,265");
-            for (int i = 0; i < BoxList.Length; i++)
+
+            if (!RouteList.Contains(Route101))
             {
-                BoxList[i] = Route101;
+            RouteList.Add(Route101);
             }
 
             MakeVisible(Route101, ActivePK101, KilledPK101, FailedPK101);
             
         }
-        private void KilledPK_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            for(int i = 0; i < BoxList.Length; i++)
-            {
-                if (BoxList[i].Name == (string)btn.Tag)
-                {
-                    BoxList[i].Enabled = false;
-                }
-            }
-        }
-            
-        private void ActivePK_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            int clicked = 0;
-            
-            if(btn.BackColor == Color.Green)
-            {
-                for(int i = 0; i < BoxList.Length; i++)
-                {
-                    if (BoxList[i].Name == (string)btn.Tag)
-                    {
-                        if(clicked == 0)
-                        {
-                            if(BoxList[i].SelectedItem != null)
-                            {
-                            PK.Add(BoxList[i].SelectedItem.ToString()!);
-                                clicked++;
-                            }
-
-                        }
-                    }
-                }
-
-                btn.BackColor = Color.Red;
-            }else if(btn.BackColor == Color.Red)
-            {
-                for (int i = 0; i < BoxList.Length; i++)
-                {
-                    if (BoxList[i].Name == (string)btn.Tag)
-                    {
-                        if (clicked == 0)
-                        {
-                            if (BoxList[i].SelectedItem != null)
-                            {
-                                PK.Remove(BoxList[i].SelectedItem.ToString()!);
-                                clicked++;
-                            }
-                        }
-                    }
-                }
-
-                btn.BackColor = Color.Green;
-            }
-        }
 
         private void R102_Click(object sender, EventArgs e)
         {
             ListCreate(Route102, "261,263,265,270,273,280");
-            for (int i = 0; i < BoxList.Length; i++)
+            if (!RouteList.Contains(Route102))
             {
-                BoxList[i] = Route102;
+            RouteList.Add(Route102);
             }
 
             MakeVisible(Route102, ActivePK102, KilledPK102, FailedPK102);
@@ -203,9 +236,9 @@ namespace PokeTracker
         private void R103_Click(object sender, EventArgs e)
         {
             ListCreate(Route103, "261,263,278");
-            for (int i = 0; i < BoxList.Length; i++)
+            if (!RouteList.Contains(Route103))
             {
-                BoxList[i] = Route103;
+            RouteList.Add(Route103);
             }
 
             MakeVisible(Route103, ActivePK103, KilledPK103, FailedPK103);
@@ -214,9 +247,9 @@ namespace PokeTracker
         private void PetalburgCity_Click(object sender, EventArgs e)
         {
             ListCreate(Petalburg, "183,118,129,341");
-            for (int i = 0; i < BoxList.Length; i++)
+            if (!RouteList.Contains(Petalburg))
             {
-                BoxList[i] = Petalburg;
+                RouteList.Add(Petalburg);
             }
 
             MakeVisible(Petalburg, ActivePKPetal, KilledPKPetal, FailedPKPetal);
@@ -225,12 +258,22 @@ namespace PokeTracker
         private void R104_Click(object sender, EventArgs e)
         {
             ListCreate(Route104, "183,261,265,276,278");
-            for (int i = 0; i < BoxList.Length; i++)
+            if (!RouteList.Contains(Route104))
             {
-                BoxList[i] = Route104;
+            RouteList.Add(Route104);
             }
 
             MakeVisible(Route104, ActivePK104, KilledPK104, FailedPK104);
+        }
+        private void PetalW_Click(object sender, EventArgs e)
+        {
+            ListCreate(PetalburgWoods, "261,265,266,268,276,285,287");
+            if (!RouteList.Contains(PetalburgWoods))
+            {
+                RouteList.Add(PetalburgWoods);
+            }
+
+            MakeVisible(PetalburgWoods, ActivePKPW, KilledPKPW, FailedPKPW);
         }
 
         private void Gym1_Click(object sender, EventArgs e)
@@ -239,7 +282,121 @@ namespace PokeTracker
             newForm.Show();
         }
 
+        private void Gym2_Click(object sender, EventArgs e)
+        {
+            Brawly brawly = new Brawly(PK);
+            brawly.Show();
+        }
+        private void R116_Click(object sender, EventArgs e)
+        {
+            ListCreate(Route116, "063,261,276,290,293,300");
+            if (!RouteList.Contains(Route116))
+            {
+                RouteList.Add(Route116);
+            }
 
+            MakeVisible(Route116, ActivePK116, KilledPK116, FailedPK116);
+        }
+
+        private void RTunnel_Click(object sender, EventArgs e)
+        {
+            ListCreate(RusturfTunnel, "293");
+            if (!RouteList.Contains(RusturfTunnel))
+            {
+                RouteList.Add(RusturfTunnel);
+            }
+
+            MakeVisible(RusturfTunnel, ActivePKRT, KilledPKRT, FailedPKRT);
+        }
+
+        private void Dewford_Click(object sender, EventArgs e)
+        {
+            ListCreate(DewfordTown, "072,129");
+            if (!RouteList.Contains(DewfordTown))
+            {
+                RouteList.Add(DewfordTown);
+            }
+
+            MakeVisible(DewfordTown, ActivePKDewford, KilledPKDewford, FailedPKDewford);
+        }
+
+        private void R106_Click(object sender, EventArgs e)
+        {
+            ListCreate(Route106, "072,129");
+            if (!RouteList.Contains(Route106))
+            {
+                RouteList.Add(Route106);
+            }
+
+            MakeVisible(Route106, ActivePK106, KilledPK106, FailedPK106);
+        }
+
+        private void R107_Click(object sender, EventArgs e)
+        {
+            ListCreate(Route107, "072,129");
+            if (!RouteList.Contains(Route107))
+            {
+                RouteList.Add(Route107);
+            }
+
+            MakeVisible(Route107, ActivePK107, KilledPK107, FailedPK107);
+        }
+
+        private void Granite_Click(object sender, EventArgs e)
+        {
+            ListCreate(GraniteCave, "041,063,074,296,302,304");
+            if (!RouteList.Contains(GraniteCave))
+            {
+                RouteList.Add(GraniteCave);
+            }
+
+            MakeVisible(GraniteCave, ActivePKGC, KilledPKGC, FailedPKGC);
+        }
+
+        private void RB3_Click(object sender, EventArgs e)
+        {
+            RivalBattle3 RB3 = new RivalBattle3(PK,Starter);
+            RB3.Show();
+        }
+
+        private void Gym3_Click(object sender, EventArgs e)
+        {
+            Wattson wattson = new Wattson(PK);
+            wattson.Show();
+        }
+
+        private void R109_Click(object sender, EventArgs e)
+        {
+            ListCreate(Route109, "072,129");
+            if (!RouteList.Contains(Route109))
+            {
+                RouteList.Add(Route109);
+            }
+
+            MakeVisible(Route109, ActivePK109, KilledPK109, FailedPK109);
+        }
+
+        private void Slateport_Click(object sender, EventArgs e)
+        {
+            ListCreate(SlateportCity, "072,129");
+            if (!RouteList.Contains(SlateportCity))
+            {
+                RouteList.Add(SlateportCity);
+            }
+
+            MakeVisible(SlateportCity, ActivePKSC, KilledPKSC, FailedPKSC);
+        }
+
+        private void R110_Click(object sender, EventArgs e)
+        {
+            ListCreate(Route110, "072,129,309,261,312,316,043,278,311");
+            if (!RouteList.Contains(Route110))
+            {
+                RouteList.Add(Route110);
+            }
+
+            MakeVisible(Route110, ActivePK110, KilledPK110, FailedPK110);
+        }
     }
 
 

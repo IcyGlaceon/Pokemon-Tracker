@@ -320,7 +320,7 @@
             this.Controls.Add(this.GymPK1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Roxanne";
-            this.Text = "Form2";
+            this.Text = "Roxanne";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
