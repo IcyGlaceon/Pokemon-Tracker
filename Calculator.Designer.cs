@@ -45,6 +45,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.textBoxOut = new System.Windows.Forms.TextBox();
             this.button0 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn1
@@ -199,7 +200,7 @@
             // 
             // textBoxOut
             // 
-            this.textBoxOut.Location = new System.Drawing.Point(12, 67);
+            this.textBoxOut.Location = new System.Drawing.Point(12, 12);
             this.textBoxOut.Name = "textBoxOut";
             this.textBoxOut.ReadOnly = true;
             this.textBoxOut.Size = new System.Drawing.Size(326, 31);
@@ -215,11 +216,21 @@
             this.button0.UseVisualStyleBackColor = true;
             this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 72);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Gen3 Calculator";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button0);
             this.Controls.Add(this.textBoxOut);
             this.Controls.Add(this.btnClear);
@@ -263,5 +274,6 @@
         private Button btnClear;
         private TextBox textBoxOut;
         private Button button0;
+        private Button button1;
     }
 }
