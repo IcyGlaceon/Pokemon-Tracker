@@ -157,65 +157,70 @@ namespace PokeTracker
         {
             AddNum("0");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxOut.Text = "((((2 * Level / 5 + 2) * AttackStat * AttackPower / DefenseStat) / 50) + 2) * STAB * Weakness/Resistance * RandomNumber / 100";
+        }
         /*
 
 private void div_btn_Click(object sender, RoutedEventArgs e)
 {
-   sign = "/";
-   num1 = num2;
-   num2 = 0;
-   UpdateOut();
+sign = "/";
+num1 = num2;
+num2 = 0;
+UpdateOut();
 }
 
 private void mult_btn_Click(object sender, RoutedEventArgs e)
 {
-   sign = "*";
-   num1 = num2;
-   num2 = 0;
-   UpdateOut();
+sign = "*";
+num1 = num2;
+num2 = 0;
+UpdateOut();
 }
 
 private void add_btn_Click(object sender, RoutedEventArgs e)
 {
-   sign = "+";
-   num1 = num2;
-   num2 = 0;
-   UpdateOut();
+sign = "+";
+num1 = num2;
+num2 = 0;
+UpdateOut();
 }
 
 private void sub_btn_Click(object sender, RoutedEventArgs e)
 {
-   sign = "-";
-   num1 = num2;
-   num2 = 0;
-   UpdateOut();
+sign = "-";
+num1 = num2;
+num2 = 0;
+UpdateOut();
 }
 
 private void eq_btn_Click(object sender, RoutedEventArgs e)
 {
-   switch (sign)
-   {
-       case "+":
-           num2 += num1;
-           break;
-       case "/":
-           num2 = num1/num2;
-           break;
-       case "*":
-           num2 *= num1;
-           break;
-       case "-":
-           num2 = num1 - num2;
-           break;
-       case "%":
-           num2 = num1 % num2;
-           break;
-   }
+switch (sign)
+{
+case "+":
+  num2 += num1;
+  break;
+case "/":
+  num2 = num1/num2;
+  break;
+case "*":
+  num2 *= num1;
+  break;
+case "-":
+  num2 = num1 - num2;
+  break;
+case "%":
+  num2 = num1 % num2;
+  break;
+}
 
-   num1 = 0;
-   firstNum = "";
-   sign = "";
-   UpdateOut();
+num1 = 0;
+firstNum = "";
+sign = "";
+UpdateOut();
 
 }
 
