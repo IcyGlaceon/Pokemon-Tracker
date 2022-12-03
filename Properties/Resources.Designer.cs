@@ -73,9 +73,9 @@ namespace PokeTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bug {
+        internal static System.Drawing.Bitmap Brendan {
             get {
-                object obj = ResourceManager.GetObject("Bug", resourceCulture);
+                object obj = ResourceManager.GetObject("Brendan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,159 +83,9 @@ namespace PokeTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dark {
+        internal static System.Drawing.Bitmap May {
             get {
-                object obj = ResourceManager.GetObject("Dark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dragon {
-            get {
-                object obj = ResourceManager.GetObject("Dragon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Electric {
-            get {
-                object obj = ResourceManager.GetObject("Electric", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EmeraldMale {
-            get {
-                object obj = ResourceManager.GetObject("EmeraldMale", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fairy {
-            get {
-                object obj = ResourceManager.GetObject("Fairy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fighting {
-            get {
-                object obj = ResourceManager.GetObject("Fighting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fire {
-            get {
-                object obj = ResourceManager.GetObject("Fire", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Flying {
-            get {
-                object obj = ResourceManager.GetObject("Flying", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ghost {
-            get {
-                object obj = ResourceManager.GetObject("Ghost", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Grass {
-            get {
-                object obj = ResourceManager.GetObject("Grass", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ground {
-            get {
-                object obj = ResourceManager.GetObject("Ground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ice {
-            get {
-                object obj = ResourceManager.GetObject("Ice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Normal {
-            get {
-                object obj = ResourceManager.GetObject("Normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Poison {
-            get {
-                object obj = ResourceManager.GetObject("Poison", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Psychic {
-            get {
-                object obj = ResourceManager.GetObject("Psychic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rock {
-            get {
-                object obj = ResourceManager.GetObject("Rock", resourceCulture);
+                object obj = ResourceManager.GetObject("May", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,19 +103,9 @@ namespace PokeTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Steel {
+        internal static System.Drawing.Bitmap Wattson {
             get {
-                object obj = ResourceManager.GetObject("Steel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Water {
-            get {
-                object obj = ResourceManager.GetObject("Water", resourceCulture);
+                object obj = ResourceManager.GetObject("Wattson", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
