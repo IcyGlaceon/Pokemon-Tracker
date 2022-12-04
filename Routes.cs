@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -18,14 +20,15 @@ namespace PokeTracker
 
         List<ComboBox> RouteList = new List<ComboBox>();
         public List<string> PK = new List<string>();
-        
+
         public Routes()
         {
             InitializeComponent();
+            Style();
         }
 
         class Connection
-        { 
+        {
             private string connetionString = "data source=(local);initial catalog=Pokemon; Trusted_Connection=True";
 
             public string ConnectionString
@@ -46,11 +49,11 @@ namespace PokeTracker
 
             SqlCommand cmd;
             SqlDataReader rdr;
-            String sql = "Select * from Stats where ID in ("+ id +")";
+            String sql = "Select * from Stats where ID in (" + id + ")";
 
             cmd = new SqlCommand(sql, cnn);
             rdr = cmd.ExecuteReader();
-            if(box.Items.Count == 0)
+            if (box.Items.Count == 0)
             {
                 while (rdr.Read())
                 {
@@ -113,7 +116,7 @@ namespace PokeTracker
         {
             Button btn = (Button)sender;
             int clicked = 0;
-            for(int i = 0; i < RouteList.Count; i++)
+            for (int i = 0; i < RouteList.Count; i++)
             {
                 if (RouteList[i].Name == (string)btn.Tag)
                 {
@@ -141,7 +144,7 @@ namespace PokeTracker
         private void FailedPK_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            for(int i = 0; i < RouteList.Count; i++)
+            for (int i = 0; i < RouteList.Count; i++)
             {
                 if (RouteList[i].Name == (string)btn.Tag)
                 {
@@ -155,15 +158,15 @@ namespace PokeTracker
             Button btn = (Button)sender;
             int clicked = 0;
 
-            if(btn.BackColor == Color.Green)
+            if (btn.BackColor == Color.Green)
             {
-                for(int i = 0; i < RouteList.Count; i++)
+                for (int i = 0; i < RouteList.Count; i++)
                 {
                     if (RouteList[i].Name == (string)btn.Tag)
                     {
-                        if(clicked == 0)
+                        if (clicked == 0)
                         {
-                            if(RouteList[i].SelectedItem != null)
+                            if (RouteList[i].SelectedItem != null)
                             {
                                 MessageBox.Show(RouteList[i].SelectedItem.ToString() + " has been activated");
                                 PK.Add(RouteList[i].SelectedItem.ToString()!);
@@ -174,7 +177,7 @@ namespace PokeTracker
                 }
 
                 btn.BackColor = Color.Red;
-            }else if(btn.BackColor == Color.Red)
+            } else if (btn.BackColor == Color.Red)
             {
                 for (int i = 0; i < RouteList.Count; i++)
                 {
@@ -182,7 +185,7 @@ namespace PokeTracker
                     {
                         if (clicked == 0)
                         {
-                            for(int p = 0; p < PK.Count;p++)
+                            for (int p = 0; p < PK.Count; p++)
                             {
                                 if (PK[p] == (string)RouteList[i].SelectedItem)
                                 {
@@ -215,11 +218,11 @@ namespace PokeTracker
 
             if (!RouteList.Contains(Route101))
             {
-            RouteList.Add(Route101);
+                RouteList.Add(Route101);
             }
 
             MakeVisible(Route101, ActivePK101, KilledPK101, FailedPK101);
-            
+
         }
 
         private void R102_Click(object sender, EventArgs e)
@@ -227,7 +230,7 @@ namespace PokeTracker
             ListCreate(Route102, "261,263,265,270,273,280");
             if (!RouteList.Contains(Route102))
             {
-            RouteList.Add(Route102);
+                RouteList.Add(Route102);
             }
 
             MakeVisible(Route102, ActivePK102, KilledPK102, FailedPK102);
@@ -238,7 +241,7 @@ namespace PokeTracker
             ListCreate(Route103, "261,263,278");
             if (!RouteList.Contains(Route103))
             {
-            RouteList.Add(Route103);
+                RouteList.Add(Route103);
             }
 
             MakeVisible(Route103, ActivePK103, KilledPK103, FailedPK103);
@@ -260,7 +263,7 @@ namespace PokeTracker
             ListCreate(Route104, "183,261,265,276,278");
             if (!RouteList.Contains(Route104))
             {
-            RouteList.Add(Route104);
+                RouteList.Add(Route104);
             }
 
             MakeVisible(Route104, ActivePK104, KilledPK104, FailedPK104);
@@ -355,7 +358,7 @@ namespace PokeTracker
 
         private void RB3_Click(object sender, EventArgs e)
         {
-            RivalBattle3 RB3 = new RivalBattle3(PK,Starter);
+            RivalBattle3 RB3 = new RivalBattle3(PK, Starter);
             RB3.Show();
         }
 
@@ -397,7 +400,81 @@ namespace PokeTracker
 
             MakeVisible(Route110, ActivePK110, KilledPK110, FailedPK110);
         }
+
+        public void Style()
+        {
+            ActivePKStart.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKStart.Width, ActivePKStart.Height, 40, 40));
+            KilledPKStart.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKStart.Width, KilledPKStart.Height, 40, 40));
+            FailedPKStart.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKStart.Width, FailedPKStart.Height, 40, 40));
+            ActivePK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK101.Width, ActivePK101.Height, 40, 40));
+            KilledPK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK101.Width, KilledPK103.Height, 40, 40));
+            FailedPK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK101.Width, FailedPK103.Height, 40, 40));
+            ActivePK103.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK103.Width, ActivePK103.Height, 40, 40));
+            KilledPK103.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK103.Width, KilledPK103.Height, 40, 40));
+            FailedPK103.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK103.Width, FailedPK103.Height, 40, 40));
+            ActivePK102.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK102.Width, ActivePK102.Height, 40, 40));
+            KilledPK102.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK102.Width, KilledPK102.Height, 40, 40));
+            FailedPK102.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK102.Width, FailedPK102.Height, 40, 40));
+            ActivePK104.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK104.Width, ActivePK104.Height, 40, 40));
+            KilledPK104.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK104.Width, KilledPK104.Height, 40, 40));
+            FailedPK104.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK104.Width, FailedPK104.Height, 40, 40));
+            ActivePK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK101.Width, ActivePK101.Height, 40, 40));
+            KilledPK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK101.Width, KilledPK101.Height, 40, 40));
+            FailedPK101.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK101.Width, FailedPK101.Height, 40, 40));
+            ActivePKPW.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKPW.Width, ActivePKPW.Height, 40, 40));
+            KilledPKPW.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKPW.Width, KilledPKPW.Height, 40, 40));
+            FailedPKPW.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKPW.Width, FailedPKPW.Height, 40, 40));
+            ActivePK116.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK116.Width, ActivePK116.Height, 40, 40));
+            KilledPK116.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK116.Width, KilledPK116.Height, 40, 40));
+            FailedPK116.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK116.Width, FailedPK116.Height, 40, 40));
+            ActivePKRT.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKRT.Width, ActivePKRT.Height, 40, 40));
+            KilledPKRT.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKRT.Width, KilledPKRT.Height, 40, 40));
+            FailedPKRT.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKRT.Width, FailedPKRT.Height, 40, 40));
+            ActivePKDewford.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKDewford.Width, ActivePKDewford.Height, 40, 40));
+            KilledPKDewford.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKDewford.Width, KilledPKDewford.Height, 40, 40));
+            FailedPKDewford.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKDewford.Width, FailedPKDewford.Height, 40, 40));
+            ActivePKPetal.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKPetal.Width, ActivePKPetal.Height, 40, 40));
+            KilledPKPetal.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKPetal.Width, KilledPKPetal.Height, 40, 40));
+            FailedPKPetal.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKPetal.Width, FailedPKPetal.Height, 40, 40));
+            ActivePK106.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK106.Width, ActivePK106.Height, 40, 40));
+            KilledPK106.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK106.Width, KilledPK106.Height, 40, 40));
+            FailedPK106.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK106.Width, FailedPK106.Height, 40, 40));
+            ActivePK107.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK107.Width, ActivePK107.Height, 40, 40));
+            KilledPK107.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK107.Width, KilledPK107.Height, 40, 40));
+            FailedPK107.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK107.Width, FailedPK107.Height, 40, 40));
+            ActivePKGC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKGC.Width, ActivePKGC.Height, 40, 40));
+            KilledPKGC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKGC.Width, KilledPKGC.Height, 40, 40));
+            FailedPKGC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKGC.Width, FailedPKGC.Height, 40, 40));
+            ActivePK109.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK109.Width, ActivePK109.Height, 40, 40));
+            KilledPK109.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK109.Width, KilledPK109.Height, 40, 40));
+            FailedPK109.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK109.Width, FailedPK109.Height, 40, 40));
+            ActivePKSC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePKSC.Width, ActivePKSC.Height, 40, 40));
+            KilledPKSC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPKSC.Width, KilledPKSC.Height, 40, 40));
+            FailedPKSC.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPKSC.Width, FailedPKSC.Height, 40, 40));
+            ActivePK110.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ActivePK110.Width, ActivePK110.Height, 40, 40));
+            KilledPK110.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, KilledPK110.Width, KilledPK110.Height, 40, 40));
+            FailedPK110.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, FailedPK110.Width, FailedPK110.Height, 40, 40));
+
+
+        }
+    
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+            (
+                int nLeft,
+                int nTop,
+                int nRight,
+                int nBottom,
+                int nWidthEllipse,
+                int nHeightEllipse
+            );
     }
-
-
 }
+
+/*
+ * Bagde design credit to Zexion21
+ * VS design Credit Saro
+ * Map design credit to Dea Baylee
+ */

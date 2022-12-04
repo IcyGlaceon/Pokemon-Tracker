@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace PokeTracker
         public RivalBattle3(List<string> K, ComboBox Starter)
         {
             InitializeComponent();
+            Style();
 
             ListPPK = new[] { PPK1, PPK2, PPK3, PPK4, PPK5, PPK6 };
             String sql = "";
@@ -193,8 +195,31 @@ namespace PokeTracker
                     PSPE.Text = "SPE - " + list[i + 8];
                 }
             }
-
-
         }
+
+        public void Style()
+        {
+            GymPK1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GymPK1.Width, GymPK1.Height, 50 , 50));
+            GymPK2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GymPK2.Width, GymPK2.Height, 50 , 50));
+            GymPK3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, GymPK3.Width, GymPK3.Height, 50 , 50));
+            PPK1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK1.Width, PPK1.Height, 50 , 50));
+            PPK2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK2.Width, PPK2.Height, 50 , 50));
+            PPK3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK3.Width, PPK3.Height, 50 , 50));
+            PPK4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK4.Width, PPK4.Height, 50 , 50));
+            PPK5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK5.Width, PPK5.Height, 50 , 50));
+            PPK6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, PPK6.Width, PPK6.Height, 50 , 50));
+        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+            (
+                int nLeft,
+                int nTop,
+                int nRight,
+                int nBottom,
+                int nWidthEllipse,
+                int nHeightEllipse
+            );
     }
 }

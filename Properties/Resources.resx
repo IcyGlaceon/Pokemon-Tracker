@@ -133,4 +133,31 @@
   <data name="May" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\May1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PKMN_RBYGSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PKMN RBYGSC.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\Map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pokeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\pokeball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\VS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Badges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Badges.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dynamo_Badge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dynamo_Badge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knuckle_Badge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Knuckle_Badge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rayquaza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rayquaza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stone_Badge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone_Badge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
